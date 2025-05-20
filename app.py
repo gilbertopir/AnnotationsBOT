@@ -41,6 +41,10 @@ if user_prompt:
                     ]
                 )
                 reply = response.choices[0].message.content
+                #print usage
+                usage = response.usage  # <- contains prompt_tokens, completion_tokens, total_tokens
+                st.info(f"Token usage: Prompt={usage.prompt_tokens}, Completion={usage.completion_tokens}, Total={usage.total_tokens}")
+                
             except Exception as e:
                 reply = f"❌ Error: {str(e)}"
 
