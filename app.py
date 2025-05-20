@@ -2,9 +2,10 @@ import streamlit as st
 import os
 import openai
 
+st.write("Secrets loaded:", list(st.secrets.keys()))
 # OpenAI client (new API format)
 #client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-# Use secret directly from Streamlit
+# Access the API key from Streamlit secrets
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
