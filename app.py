@@ -27,7 +27,7 @@ def load_and_format_database(url, max_entries=None):
 
 # GitHub raw CSV URL
 csv_url = "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/Database_1000.csv"
-database = load_and_format_database(csv_url, max_entries=200)
+database = load_and_format_database(csv_url, max_entries=500)
 
 # --- Format database as prompt text ---
 
