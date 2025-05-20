@@ -5,12 +5,11 @@ import csv
 import requests
 import io
 
-# Set up OpenAI client
-client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
 st.set_page_config(page_title="AnnotationBOT", page_icon="📐")
 st.title("📐 AnnotationBOT")
 st.markdown("Ask for drawing annotation suggestions based on a curated annotation database.")
+# Set up OpenAI client
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # --- Load CSV from GitHub and parse it into dicts ---
 
