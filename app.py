@@ -41,12 +41,24 @@ if user_prompt:
                     ]
                 )
                 reply = response.choices[0].message.content
-                #print usage
-                usage = response.usage  # <- contains prompt_tokens, completion_tokens, total_tokens
-                st.info(f"Token usage: Prompt={usage.prompt_tokens}, Completion={usage.completion_tokens}, Total={usage.total_tokens}")
+                
+                # Calculate usage
+                usage = response.usage
+                prompt_tokens = usage.prompt_tokens
+                completion_tokens = usage.completion_tokens
+                
+                # Cost per 1K tokens for gpt-3.5-turbo
+                input_price = 0.0005
+                output_price = 0.0015
+                
+                # Calculate total cost
+                total_cost = (prompt_tokens / 1000) * input_price + (completion_tokens / 1000) * output_price
+                
                 
             except Exception as e:
                 reply = f"❌ Error: {str(e)}"
 
             st.markdown(reply)
             st.session_state.messages.append({"role": "assistant", "content": reply})
+            # Show estimated cost
+            st.info(f"Estimated cost: ${total_cost:.6f}")
