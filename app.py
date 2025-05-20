@@ -3,7 +3,10 @@ import os
 import openai
 
 # OpenAI client (new API format)
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Use secret directly from Streamlit
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+
 
 st.set_page_config(page_title="Annotation Assistant", page_icon="📐")
 st.title("📐 Drawing Annotation Assistant")
