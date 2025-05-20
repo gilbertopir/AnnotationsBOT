@@ -2,14 +2,12 @@ import streamlit as st
 import os
 import openai
 
-st.write("Secrets loaded:", list(st.secrets.keys()))
-# OpenAI client (new API format)
-#client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# MUST be first Streamlit command
+st.set_page_config(page_title="Annotation Assistant", page_icon="📐")
+
 # Access the API key from Streamlit secrets
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-
-st.set_page_config(page_title="Annotation Assistant", page_icon="📐")
 st.title("📐 Drawing Annotation Assistant")
 st.markdown("Ask a question and get help based on your annotation knowledge.")
 
