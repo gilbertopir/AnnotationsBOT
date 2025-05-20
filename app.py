@@ -61,10 +61,10 @@ if user_prompt:
     # Build full prompt with database context
     system_prompt = (
         "You are an assistant specializing in civil engineering construction technical drawings annotations."
-        "The following database is your reference. Use it to answer any questions about annotations."
+        "The following database is your only reference to anwser any questions"
         "Search first the description collumn for any match related to any query."
-        "Drawing: is the drawing number, Description: is the drawing description, Annotation: is the annotations available in the drawing. "
-        "Reply with the most relevant annotations exactly as per the full text that is on the database in the annotation field."
+        "The Drawing field is the drawing number, the Description field is the drawing description, the Annotationfield are the annotations available in the drawing. "
+        "When asked about the content of annotations in drawings please reply with the excat full text that is i the database in the annotation field."
         "Act more as a smart search engine."
     )
 
