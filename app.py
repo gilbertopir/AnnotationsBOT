@@ -65,7 +65,7 @@ if user_prompt:
         "Search first the description collumn for any match related to any query."
         "Drawing: is the drawing number, Description: is the drawing description, Annotation: is the annotations available in the drawing. "
         "Reply with the most relevant annotations exactly as per the full text that is on the database in the annotation field."
-        "Don't add extra pre-fixes."
+        "Act more as a smart search engine."
     )
 
     full_user_prompt = f"{database_prompt}\n\nUser query: {user_prompt}"
