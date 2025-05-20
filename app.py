@@ -60,8 +60,11 @@ if user_prompt:
 
     # Build full prompt with database context
     system_prompt = (
-        "You are a helpful assistant for civil engineering construction drawings. "
-        "Use the database of past annotations to suggest relevant notes."
+        "You are an assistant specializing in civil engineering construction blue prints annotations. "
+        "The following database is your reference. Use it to answer any questions about annotations. "
+        "Search first the description collumn for any match related to any query. "
+        "Drawing: is the drawing number, Description: is the drawing description, Annotation: is the annotations available on the drawing. "
+        "Reply with the most relevant annotations exactly as per the database. "
     )
 
     full_user_prompt = f"{database_prompt}\n\nUser query: {user_prompt}"
